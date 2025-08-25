@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna Carollina Barros de Sousa - Enfermeira Especializada</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Light Theme - Hospital Colors */
+            --primary-color: #0066cc;
+            --secondary-color: #004499;
+            --accent-color: #00b4d8;
+            --medical-green: #10b981;
+            --medical-red: #ef4444;
+            --text-primary: #1a365d;
+            --text-secondary: #4a5568;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --bg-tertiary: #edf2f7;
+            --border-color: #e2e8f0;
+            --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            /* Dark Theme - Professional Medical */
+            --primary-color: #60a5fa;
+            --secondary-color: #3b82f6;
+            --accent-color: #0ea5e9;
+            --medical-green: #34d399;
+            --medical-red: #f87171;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --border-color: #475569;
+            --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.3);
+            --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.3);
+            --shadow-heavy: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            transition: var(--transition);
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--bg-primary);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: var(--transition);
+            box-shadow: var(--shadow-light);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+            background-color: var(--bg-secondary);
+        }
+
+        .theme-toggle {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.75rem;
+            border-radius: 8px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--bg-tertiary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 8rem 0 5rem;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm10 0c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.75rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            position: relative;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section:nth-child(even) {
+            background-color: var(--bg-secondary);
+        }
+
+        /* Medical Badge */
+        .medical-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--medical-green), #059669);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* About */
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-intro {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .about-text-section {
+            flex: 1;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .about-image-placeholder {
+            flex-shrink: 0;
+            width: 300px;
+            height: 350px;
+            background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 4rem;
+            border: 2px solid var(--border-color);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background-color: var(--bg-primary);
+            border-radius: 16px;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Specialties */
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .specialty-card {
+            background-color: var(--bg-primary);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .specialty-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        .specialty-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .specialty-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .specialty-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .specialty-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .specialty-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: var(--bg-primary);
+            border-radius: 16px;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+            margin-left: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.75rem;
+            top: 2.5rem;
+            width: 12px;
+            height: 12px;
+            background-color: var(--primary-color);
+            border: 3px solid var(--bg-primary);
+            border-radius: 50%;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .timeline-icon {
+            flex-shrink: 0;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.75rem;
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-subtitle {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .timeline-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .timeline-date {
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+            transition: var(--transition);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3), 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3), 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3), 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* Contact */
+        .contact-info {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-card {
+            background-color: var(--bg-primary);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+
+        .contact-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-text {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--bg-tertiary);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a {
+                padding: 0.5rem;
+                font-size: 0.85rem;
+            }
+
+            .theme-toggle {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2.25rem;
+            }
+
+            .about-intro {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .about-image-placeholder {
+                width: 250px;
+                height: 300px;
+                align-self: center;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+                margin-left: 1rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item::before {
+                left: -1.75rem;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .specialties-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .specialty-card,
+            .timeline-item {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <span>Anna Carollina</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#especialidades">Especialidades</a></li>
+                    <li><a href="#formacao">Formação</a></li>
+                    <li><a href="#experiencia">Experiência</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li>
+                        <button class="theme-toggle" id="theme-toggle">
+                            <i class="fas fa-moon"></i>
+                            <span class="theme-text">Escuro</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-certificate"></i>
+                    COREN-DF • Responsável Técnica
+                </div>
+                <h1>Anna Carollina Barros de Sousa</h1>
+                <p class="subtitle">Enfermeira Especializada em Urgência, Emergência e Radiologia</p>
+                <a href="https://wa.me/5561991673677" class="hero-cta" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    Agendar Consulta
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="sobre">
+        <div class="container">
+            <h2 class="section-title">Sobre a Profissional</h2>
+            <p class="section-subtitle">Compromisso com a excelência no cuidado e segurança do paciente</p>
+            
+            <div class="about-content">
+                <div class="about-intro">
+                    <div class="about-text-section">
+                        <p class="about-text">
+                            <strong>Enfermeira graduada pela Universidade Católica de Brasília (UCB)</strong> com 
+                            especialização em Urgência e Emergência pelo IESB. Possuo ampla experiência em 
+                            atendimento hospitalar de alta complexidade, atuando desde emergências médicas até 
+                            procedimentos radiológicos especializados.
+                        </p>
+                        <p class="about-text">
+                            Atualmente desempenho a função de <strong>Responsável Técnica no setor de radiologia 
+                            do Hospital Anchieta</strong>, com inscrição RT no COREN-DF para setor de imagem e 
+                            diagnóstico. Certificada em ACLS (Suporte Avançado de Vida Cardiovascular) pela 
+                            American Heart Association.
+                        </p>
+                        <div class="medical-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            Certificação ACLS Válida 2025-2027
+                        </div>
+                    </div>
+                    <div class="about-image-placeholder">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-label">Anos de Experiência Clínica</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Anos de Voluntariado</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">360h</span>
+                        <span class="stat-label">Pós-Graduação Especializada</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">RT</span>
+                        <span class="stat-label">Responsável Técnica COREN-DF</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialties -->
+    <section class="section" id="especialidades">
+        <div class="container">
+            <h2 class="section-title">Especialidades Médicas</h2>
+            <p class="section-subtitle">Áreas de expertise com foco na excelência técnica e humanização do cuidado</p>
+            
+            <div class="specialties-grid">
+                <div class="specialty-card">
+                    <div class="specialty-header">
+                        <div class="specialty-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 class="specialty-title">Urgência e Emergência</h3>
+                    </div>
+                    <p class="specialty-description">
+                        Especialização em atendimento de emergência com ampla experiência em sala vermelha, 
+                        triagem Manchester, estabilização de pacientes críticos e protocolos de urgência. 
+                        Certificação ACLS para suporte avançado de vida cardiovascular e manejo de 
+                        parada cardiorrespiratória.
+                    </p>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-header">
+                        <div class="specialty-icon">
+                            <i class="fas fa-x-ray"></i>
+                        </div>
+                        <h3 class="specialty-title">Radiologia e Diagnóstico</h3>
+                    </div>
+                    <p class="specialty-description">
+                        Responsável Técnica em setor de radiologia com expertise em procedimentos de imagem 
+                        diagnóstica, protocolos de radioproteção, gestão de qualidade em serviços de 
+                        diagnóstico por imagem e supervisão de equipe multidisciplinar especializada.
+                    </p>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-header">
+                        <div class="specialty-icon">
+                            <i class="fas fa-procedures"></i>
+                        </div>
+                        <h3 class="specialty-title">Centro Cirúrgico</h3>
+                    </div>
+                    <p class="specialty-description">
+                        Experiência como circulante de sala cirúrgica em procedimentos de alta complexidade, 
+                        domínio em técnicas assépticas, instrumentação cirúrgica, cuidados perioperatórios 
+                        e protocolos de segurança cirúrgica conforme diretrizes nacionais e internacionais.
+                    </p>
+                </div>
+                
+                <div class="specialty-card">
+                    <div class="specialty-header">
+                        <div class="specialty-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3 class="specialty-title">Gestão Hospitalar</h3>
+                    </div>
+                    <p class="specialty-description">
+                        Atuação como Responsável Técnica com foco em gestão da qualidade assistencial, 
+                        implementação de protocolos de segurança do paciente, auditoria em saúde, 
+                        conformidade regulatória e liderança de equipes multidisciplinares.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section" id="formacao">
+        <div class="container">
+            <h2 class="section-title">Formação Acadêmica</h2>
+            <p class="section-subtitle">Educação continuada e especialização em excelência médica</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2018 - 2022</span>
+                        <h3 class="timeline-title">Bacharelado em Enfermagem</h3>
+                        <p class="timeline-subtitle">Universidade Católica de Brasília (UCB)</p>
+                        <p class="timeline-description">
+                            Formação integral em Enfermagem com ênfase em cuidados críticos, fundamentação 
+                            científica sólida, prática clínica supervisionada e desenvolvimento de competências 
+                            técnicas e humanísticas para o exercício profissional de excelência.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - 2024</span>
+                        <h3 class="timeline-title">Pós-Graduação em Urgência e Emergência</h3>
+                        <p class="timeline-subtitle">IESB - Instituto de Educação Superior de Brasília</p>
+                        <p class="timeline-description">
+                            Especialização lato sensu com 360 horas de duração, abordando protocolos avançados 
+                            de emergência, farmacologia em urgência, gestão de trauma, cuidados intensivos e 
+                            metodologias baseadas em evidências científicas atuais.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025 - 2027</span>
+                        <h3 class="timeline-title">ACLS - Advanced Cardiovascular Life Support</h3>
+                        <p class="timeline-subtitle">ICTDF - American Heart Association</p>
+                        <p class="timeline-description">
+                            Certificação internacional em Suporte Avançado de Vida Cardiovascular, habilitando 
+                            para manejo especializado de parada cardiorrespiratória, arritmias complexas, 
+                            síndrome coronariana aguda e emergências cardiovasculares.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experiencia">
+        <div class="container">
+            <h2 class="section-title">Experiência Profissional</h2>
+            <p class="section-subtitle">Trajetória consolidada em instituições de saúde de referência</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Março 2024 - Presente</span>
+                        <h3 class="timeline-title">Enfermeira Responsável Técnica</h3>
+                        <p class="timeline-subtitle">Hospital Anchieta de Taguatinga Norte</p>
+                        <p class="timeline-description">
+                            Responsabilidade técnica do setor de radiologia com inscrição RT no COREN-DF 
+                            para setor de imagem e diagnóstico. Supervisão direta de equipe multidisciplinar, 
+                            implementação de protocolos de qualidade, gestão de radioproteção e garantia 
+                            da segurança dos procedimentos diagnósticos.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - 2024</span>
+                        <h3 class="timeline-title">Enfermeira de Centro Cirúrgico</h3>
+                        <p class="timeline-subtitle">Instituto de Cirurgia do Lago Sul</p>
+                        <p class="timeline-description">
+                            Atuação como circulante de sala cirúrgica em procedimentos de alta complexidade 
+                            e no posto de enfermagem da clínica cirúrgica. Responsável pela manutenção da 
+                            assepsia, controle de materiais e equipamentos, e assistência perioperatória 
+                            especializada.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-ambulance"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 - 2024</span>
+                        <h3 class="timeline-title">Enfermeira Voluntária de Emergência</h3>
+                        <p class="timeline-subtitle">Secretaria de Saúde do Distrito Federal</p>
+                        <p class="timeline-description">
+                            Dois anos de atuação voluntária no Pronto Socorro do Hospital Regional da 
+                            Ceilândia (incluindo sala vermelha) e Hospital Regional de Samambaia Norte. 
+                            Experiência em emergências médicas, trauma, atendimento a múltiplas vítimas 
+                            e protocolos de urgência hospitalar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contato">
+        <div class="container">
+            <h2 class="section-title">Informações de Contato</h2>
+            <p class="section-subtitle">Entre em contato para agendamentos e informações profissionais</p>
+            
+            <div class="contact-info">
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3 class="contact-title">WhatsApp Profissional</h3>
+                        <p class="contact-text">(61) 99167-3677</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="contact-title">Localização</h3>
+                        <p class="contact-text">Brasília, Distrito Federal</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <h3 class="contact-title">Registro Profissional</h3>
+                        <p class="contact-text">COREN-DF • RT Imagem</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">
+                    &copy; 2024 Anna Carollina Barros de Sousa - Enfermeira Especializada
+                </p>
+                <div class="footer-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    Profissional Certificada • COREN-DF
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5561991673677" class="whatsapp-float" target="_blank" title="Fale comigo no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Theme Toggle with Enhanced UX
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const themeIcon = themeToggle.querySelector('i');
+        const themeText = themeToggle.querySelector('.theme-text');
+
+        // Check for saved theme preference or default to light
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', currentTheme);
+        updateThemeElements(currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            // Add transition effect
+            body.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeElements(newTheme);
+            
+            // Remove transition after theme change
+            setTimeout(() => {
+                body.style.transition = '';
+            }, 300);
+        });
+
+        function updateThemeElements(theme) {
+            if (theme === 'dark') {
+                themeIcon.className = 'fas fa-sun';
+                themeText.textContent = 'Claro';
+            } else {
+                themeIcon.className = 'fas fa-moon';
+                themeText.textContent = 'Escuro';
+            }
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 100;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Enhanced header scroll effect
+        let lastScrollTop = 0;
+        const header = document.querySelector('.header');
+        let scrollTimeout;
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            clearTimeout(scrollTimeout);
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            
+            // Add background blur effect on scroll
+            if (scrollTop > 50) {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(20px)';
+            } else {
+                header.style.backgroundColor = 'var(--bg-primary)';
+                header.style.backdropFilter = 'none';
+            }
+            
+            scrollTimeout = setTimeout(() => {
+                lastScrollTop = scrollTop;
+            }, 10);
+        });
+
+        // Enhanced intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 100); // Stagger animation
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for staggered animation
+        document.querySelectorAll('.specialty-card, .timeline-item, .stat-item, .contact-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(el);
+        });
+
+        // Mobile menu functionality (for future enhancement)
+        const mobileBreakpoint = 768;
+        
+        function handleResize() {
+            if (window.innerWidth <= mobileBreakpoint) {
+                // Mobile specific adjustments can be added here
+                document.body.classList.add('mobile');
+            } else {
+                document.body.classList.remove('mobile');
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+        handleResize(); // Call on initial load
+
+        // WhatsApp float button interaction
+        const whatsappFloat = document.querySelector('.whatsapp-float');
+        
+        whatsappFloat.addEventListener('click', function(e) {
+            // Add click animation
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+        });
+
+        // Preload critical resources
+        function preloadResources() {
+            const link = document.createElement('link');
+            link.rel = 'preconnect';
+            link.href = 'https://fonts.googleapis.com';
+            document.head.appendChild(link);
+        }
+
+        // Initialize on DOM loaded
+        document.addEventListener('DOMContentLoaded', preloadResources);
+    </script>
+</body>
+</html>
